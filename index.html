@@ -4,15 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andres Arias — Technology Leader, Educator, Coach</title>
-  <meta name="description" content="Andres Arias works at the intersection of AI disruption and human transition. Technology executive, business school faculty, researcher, writer, and coach.">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231D4E4A'/%3E%3Crect x='22' y='18' width='7' height='28' fill='%23EEEBE3'/%3E%3Crect x='35' y='18' width='7' height='28' fill='%23EEEBE3' opacity='.55'/%3E%3C/svg%3E">
-  <meta property="og:title" content="Andres Arias — Technology Leader, Educator, Coach">
-  <meta property="og:description" content="Working at the intersection of AI disruption and human transition.">
+  <meta name="description" content="Andres Arias works at the intersection of AI disruption and human transition. Senior customer solutions leader at AWS, faculty at Florida International University, researcher, writer, and ontological coach.">
+  <link rel="canonical" href="https://andresarias.com/">
+
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://andresarias.com">
+  <meta property="og:url" content="https://andresarias.com/">
+  <meta property="og:title" content="Andres Arias — Technology Leader, Educator, Coach">
+  <meta property="og:description" content="Work is changing underneath people. I help capable people and organizations redesign work, and themselves, when technology changes what work means.">
+  <meta property="og:image" content="https://andresarias.com/images/andres-portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Andres Arias — Technology Leader, Educator, Coach">
+  <meta name="twitter:description" content="Work is changing underneath people. I help capable people and organizations redesign work, and themselves, when technology changes what work means.">
+  <meta name="twitter:image" content="https://andresarias.com/images/andres-portrait.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231D4E4A'/%3E%3Crect x='22' y='18' width='7' height='28' fill='%23EEEBE3'/%3E%3Crect x='35' y='18' width='7' height='28' fill='%23EEEBE3' opacity='.55'/%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --paper: #EEEBE3;
@@ -21,337 +31,345 @@
       --ink-soft: #4A4B46;
       --ink-faint: #8A897F;
       --pine: #1D4E4A;
+      --pine-deep: #163B38;
       --clay: #B08A5A;
       --hairline: rgba(32, 33, 30, 0.14);
       --serif: 'EB Garamond', Georgia, serif;
-      --sans: 'Inter', -apple-system, sans-serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+      --gutter: clamp(1.5rem, 9vw, 140px);
+      --label-col: 200px;
+      --section-gap: 64px;
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
     body {
-      background-color: var(--paper);
+      background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
       font-weight: 300;
-      font-size: 1.0625rem;
-      line-height: 1.65;
+      font-size: 16px;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
     ::selection { background: var(--pine); color: var(--paper); }
 
-    a { color: inherit; }
+    a { color: var(--pine); text-decoration: none; border-bottom: 1px solid var(--pine); padding-bottom: 1px; transition: color .2s, border-color .2s; }
+    a:hover { color: var(--pine-deep); border-bottom-color: var(--pine-deep); }
+    img { display: block; max-width: 100%; }
 
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; letter-spacing: -0.01em; }
 
-    /* ---------- Nav ---------- */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(238, 235, 227, 0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--hairline);
+    .page { max-width: 1440px; margin: 0 auto; padding: 60px var(--gutter) 120px; }
+
+    .prose { text-align: justify; hyphens: auto; }
+
+    /* ---------- Masthead ---------- */
+    .masthead {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 40px;
+      padding-bottom: 18px; border-bottom: 1px solid var(--hairline); margin-bottom: 90px;
     }
-    .nav-inner {
-      max-width: 960px; margin: 0 auto; padding: 0.9rem 1.5rem;
-      display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
-    }
-    .nav-name {
-      font-family: var(--serif); font-size: 1.15rem; font-weight: 500;
-      text-decoration: none; letter-spacing: 0.01em;
-    }
-    .nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: flex-end; }
-    .nav-links a {
-      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
-      text-decoration: none; color: var(--ink-soft); transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--pine); }
-    @media (max-width: 720px) { .nav-links { display: none; } }
+    .wordmark { font-family: var(--serif); font-size: 20px; letter-spacing: 0.06em; }
+    .masthead nav { display: flex; flex-wrap: wrap; gap: 26px; font-family: var(--serif); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .masthead nav a { border: 0; color: var(--ink); }
+    .masthead nav a:hover { color: var(--pine); }
 
     /* ---------- Hero ---------- */
-    header.hero { padding: 9.5rem 0 5rem; }
+    .hero { display: grid; grid-template-columns: 1fr 360px; gap: 44px; align-items: start; margin-bottom: 90px; }
     .eyebrow {
-      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--pine); margin-bottom: 1.4rem;
+      font-family: var(--serif); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--pine); margin-bottom: 24px;
     }
-    h1 {
-      font-family: var(--serif); font-weight: 500; font-size: clamp(2.1rem, 5vw, 3.3rem);
-      line-height: 1.15; letter-spacing: -0.01em; max-width: 21ch; margin-bottom: 1.6rem;
+    .hero h1 { font-size: clamp(2.4rem, 5.4vw, 65px); line-height: 1.06; margin-bottom: 32px; text-wrap: balance; }
+    .hero-lede { font-size: 20px; line-height: 1.6; margin-bottom: 20px; }
+    .hero-lede strong { font-weight: 500; }
+    .hero .prose { color: var(--ink-soft); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 26px; border-radius: 999px;
+      font-family: var(--serif); font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
     }
-    .hero-sub { max-width: 56ch; color: var(--ink-soft); margin-bottom: 2.4rem; }
-    .hero-links { display: flex; gap: 0.9rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; text-decoration: none; font-size: 0.8rem; font-weight: 400;
-      letter-spacing: 0.08em; padding: 0.7rem 1.3rem; border: 1px solid var(--pine);
-      color: var(--pine); border-radius: 2px; transition: all 0.2s;
-    }
-    .btn:hover { background: var(--pine); color: var(--paper); }
-    .btn.solid { background: var(--pine); color: var(--paper); }
-    .btn.solid:hover { background: #163B38; border-color: #163B38; }
+    .cta-solid { background: var(--pine); border: 1px solid var(--pine); color: var(--paper); }
+    .cta-solid:hover { background: var(--pine-deep); border-color: var(--pine-deep); color: var(--paper); transform: translateY(-2px); }
+    .cta-ghost { background: transparent; border: 1px solid var(--hairline); color: var(--ink); }
+    .cta-ghost:hover { border-color: var(--pine); color: var(--ink); transform: translateY(-2px); }
+    .cta svg { width: 16px; height: 16px; fill: currentColor; opacity: .85; }
 
-    .hero-lines { margin-top: 4.5rem; width: 100%; height: auto; display: block; }
+    .plate {
+      width: 360px; height: 450px; overflow: hidden;
+      border: 6px solid var(--paper-raised); outline: 1px solid var(--hairline);
+    }
+    .plate img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ---------- Sections ---------- */
-    section { padding: 4.5rem 0; border-top: 1px solid var(--hairline); }
+    .rule { height: 1px; border: 0; background: var(--hairline); margin: 0 0 60px; }
+    section { display: grid; grid-template-columns: var(--label-col) 1fr; gap: var(--section-gap); margin-bottom: var(--section-gap); }
     .section-label {
-      font-size: 0.72rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-faint); margin-bottom: 2.2rem;
+      font-family: var(--serif); font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--pine); margin-top: 4px;
     }
-    h2 {
-      font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 3vw, 2rem);
-      line-height: 1.25; margin-bottom: 1.4rem; max-width: 30ch;
-    }
-    .prose { max-width: 62ch; }
-    .prose p + p { margin-top: 1.1rem; }
-    .prose a { color: var(--pine); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .section-body { max-width: 900px; }
+    .two-col { column-count: 2; column-gap: 56px; }
+    .two-col p { margin-bottom: 14px; }
+    .two-col p:last-child { margin-bottom: 0; }
 
-    .pull {
-      font-family: var(--serif); font-style: italic; font-size: clamp(1.25rem, 2.6vw, 1.6rem);
-      line-height: 1.4; color: var(--pine); max-width: 34ch;
-      border-left: 2px solid var(--pine); padding-left: 1.4rem; margin: 2.4rem 0 0;
+    /* ---------- Work ---------- */
+    .roles { display: grid; gap: 28px; }
+    .role { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; padding-bottom: 28px; border-bottom: 1px solid var(--hairline); }
+    .role:last-child { padding-bottom: 0; border-bottom: 0; }
+    .role h3 { font-size: 30px; margin-bottom: 6px; }
+    .role .title { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+
+    /* ---------- Research ---------- */
+    blockquote {
+      margin-bottom: 28px; padding-left: 20px; border-left: 1px solid var(--pine);
+      font-family: var(--serif); font-style: italic; font-size: clamp(1.4rem, 3.2vw, 32px); line-height: 1.28;
+      color: var(--pine);
     }
 
-    /* ---------- Cards ---------- */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; margin-top: 2.2rem; }
-    .card {
-      background: var(--paper-raised); border: 1px solid var(--hairline); border-radius: 3px;
-      padding: 1.6rem 1.5rem; display: flex; flex-direction: column; gap: 0.55rem;
+    /* ---------- Coaching ---------- */
+    .statement { font-family: var(--serif); font-size: clamp(1.5rem, 3.4vw, 30px); line-height: 1.3; margin-bottom: 18px; }
+    .link-btn {
+      display: inline-flex; align-items: center; padding: 11px 22px;
+      border: 1px solid var(--pine); border-radius: 4px; color: var(--pine);
+      font-family: var(--serif); font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
     }
-    .card h3 { font-family: var(--serif); font-weight: 500; font-size: 1.22rem; line-height: 1.3; }
-    .card .role {
-      font-size: 0.7rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clay);
-    }
-    .card p { font-size: 0.94rem; color: var(--ink-soft); }
-    .card a.more { font-size: 0.82rem; color: var(--pine); text-decoration: none; margin-top: auto; padding-top: 0.5rem; }
-    .card a.more:hover { text-decoration: underline; text-underline-offset: 3px; }
-    a.card-link { text-decoration: none; transition: border-color 0.2s; }
-    a.card-link:hover { border-color: var(--pine); }
-    .card.muted { border-style: dashed; background: transparent; }
-    .card.muted h3, .card.muted p { color: var(--ink-faint); }
+    .link-btn:hover { background: rgba(29, 78, 74, 0.08); color: var(--pine); }
 
-    /* ---------- List rows (speaking) ---------- */
-    .rows { margin-top: 2rem; border-top: 1px solid var(--hairline); max-width: 62ch; }
-    .row { display: flex; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--hairline); align-items: baseline; }
-    .row .when { font-size: 0.78rem; color: var(--ink-faint); min-width: 6.5rem; letter-spacing: 0.05em; }
-    .row .what { font-size: 0.97rem; }
-    .row .what em { font-family: var(--serif); font-style: italic; }
+    /* ---------- Writing ---------- */
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .trio h3 { font-size: 25px; margin-bottom: 10px; }
+    .trio p { font-size: 15px; margin-bottom: 10px; }
+    .trio a { font-size: 14px; }
 
-    /* ---------- Footer ---------- */
-    footer { border-top: 1px solid var(--hairline); padding: 3.5rem 0 4rem; }
-    .foot-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; margin-bottom: 1rem; }
-    .foot-links { display: flex; gap: 1.6rem; flex-wrap: wrap; margin-bottom: 2rem; }
-    .foot-links a {
-      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--ink-soft); text-decoration: none;
-    }
-    .foot-links a:hover { color: var(--pine); }
-    .colophon { font-size: 0.78rem; color: var(--ink-faint); }
+    /* ---------- Speaking ---------- */
+    table { width: 100%; max-width: 800px; border-collapse: collapse; }
+    td { padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+    tr:last-child td { border-bottom: 0; }
+    td.what { font-family: var(--serif); font-size: 19px; line-height: 1.35; }
+    td.when { text-align: right; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; padding-left: 20px; }
 
-    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    /* ---------- Contact ---------- */
+    .connect { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 36px); line-height: 1.28; margin-bottom: 28px; }
+    .connect-links { display: flex; flex-wrap: wrap; gap: 36px; font-size: 16px; align-items: baseline; }
+    .connect-links .place { color: var(--ink-faint); }
+
+    /* ---------- Reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms ease, transform 700ms ease; }
     .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      :root { --label-col: 150px; --section-gap: 40px; }
+      .hero { grid-template-columns: 1fr 300px; }
+      .plate { width: 300px; height: 375px; }
+      .role { grid-template-columns: 1fr; gap: 12px; }
+      .trio { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 760px) {
+      .page { padding: 36px var(--gutter) 72px; }
+      .masthead { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 56px; }
+      .masthead nav { gap: 18px; }
+      .hero { grid-template-columns: 1fr; gap: 36px; margin-bottom: 56px; }
+      .plate { width: 100%; max-width: 300px; height: auto; aspect-ratio: 4 / 5; }
+      .hero-lede { font-size: 18px; }
+      section { grid-template-columns: 1fr; gap: 20px; }
+      .two-col { column-count: 1; }
+      .trio { grid-template-columns: 1fr; gap: 28px; }
+      .rule { margin-bottom: 40px; }
+      .prose { text-align: left; }
+      td.what { font-size: 17px; }
+      .connect-links { gap: 22px; }
     }
   </style>
 </head>
 <body>
+  <div class="page">
 
-  <nav>
-    <div class="nav-inner">
-      <a class="nav-name" href="#top">Andres Arias</a>
-      <div class="nav-links">
-        <a href="#bio">Bio</a>
+    <header class="masthead">
+      <span class="wordmark">Andres Arias</span>
+      <nav>
+        <a href="#about">About</a>
         <a href="#work">Work</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#writing">Writing</a>
         <a href="#research">Research</a>
         <a href="#coaching">Coaching</a>
-        <a href="#press">Press</a>
-      </div>
-    </div>
-  </nav>
+        <a href="#writing">Writing</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <header class="hero wrap" id="top">
-    <p class="eyebrow">Andres Arias · Technology Leader · Educator · Coach</p>
-    <h1>Working at the intersection of AI disruption and human transition.</h1>
-    <p class="hero-sub">I help capable professionals and organizations redesign work, and themselves, when technology changes what work means. Two decades of enterprise technology leadership, a doctorate on the human cost of technology adoption, and a coaching practice built for people at inflection points.</p>
-    <div class="hero-links">
-      <a class="btn solid" href="https://distinctions.andresarias.com">Read Distinctions</a>
-      <a class="btn" href="https://coaching.andresarias.com">Work with me</a>
-      <a class="btn" href="https://www.linkedin.com/in/andresarias">LinkedIn</a>
-    </div>
-
-    <!-- Fine-lines motif: parallel lines, one breaks away (pine) -->
-    <svg class="hero-lines" viewBox="0 0 960 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g stroke="#20211E" stroke-width="1" opacity="0.55">
-        <line x1="0" y1="30"  x2="960" y2="30"/>
-        <line x1="0" y1="44"  x2="960" y2="44"/>
-        <line x1="0" y1="58"  x2="960" y2="58"/>
-        <line x1="0" y1="86"  x2="960" y2="86"/>
-        <line x1="0" y1="100" x2="960" y2="100"/>
-        <line x1="0" y1="114" x2="960" y2="114"/>
-        <line x1="0" y1="128" x2="960" y2="128"/>
-      </g>
-      <path d="M0 72 H 380 C 520 72, 560 12, 960 8" stroke="#1D4E4A" stroke-width="2"/>
-    </svg>
-  </header>
-
-  <section id="bio">
-    <div class="wrap reveal">
-      <p class="section-label">Bio</p>
-      <h2>Corporate depth. Academic rigor. Human warmth.</h2>
-      <div class="prose">
-        <p>I have spent more than two decades inside demanding technology organizations, most recently as a senior customer solutions leader at Amazon Web Services, guiding large enterprises across the Americas through cloud and AI transformation.</p>
-        <p>Along the way I earned a doctorate in business administration at Florida International University, where I also teach: business intelligence, analytics, statistics, and AI strategy, for undergraduates, graduate students, and executives.</p>
-        <p>The through-line in all of it is the same. I help people at inflection points, the moments when the old chapter has clearly ended and the new one has not yet taken shape, see themselves more clearly and move.</p>
-      </div>
-      <p class="pull">Jobs are bundles of tasks. AI is unbundling them. The question that matters is how we rebundle what remains.</p>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="wrap reveal">
-      <p class="section-label">Work</p>
-      <h2>Where I practice what I teach.</h2>
-      <div class="cards">
-        <div class="card">
-          <p class="role">Enterprise Technology</p>
-          <h3>Amazon Web Services</h3>
-          <p>Senior customer solutions leader. Cloud and AI adoption strategy for some of the largest enterprises in the Americas.</p>
-        </div>
-        <div class="card">
-          <p class="role">Teaching</p>
-          <h3>Florida International University</h3>
-          <p>Faculty at the College of Business. Business intelligence, analytics, statistics, and AI strategy, plus executive education on AI execution.</p>
-        </div>
-        <div class="card">
-          <p class="role">Board &amp; Advisory</p>
-          <h3>Boards, founders, executive teams</h3>
-          <p>Board director and strategy advisor at DCT, a Latin American technology consultancy. Advisor to founders and executives on product and AI adoption.</p>
+    <div class="hero reveal">
+      <div>
+        <p class="eyebrow">AI Disruption &amp; Human Transition</p>
+        <h1>Work is changing underneath people.</h1>
+        <p class="hero-lede">Hi, I'm <strong>Andres Arias</strong>. I help capable people and organizations redesign work, and themselves, when technology changes what work means.</p>
+        <p class="prose">Jobs are bundles of tasks. AI is unbundling them. The question that matters is how we rebundle what remains — for the enterprise, and for the person inside it.</p>
+        <div class="cta-row">
+          <a class="cta cta-solid" href="https://distinctions.andresarias.com">Read Distinctions →</a>
+          <a class="cta cta-ghost" href="https://linkedin.com/in/andresarias">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C20.5 8.75 21 11.3 21 14.3V21h-4v-5.9c0-1.4-.03-3.2-2-3.2-2 0-2.3 1.5-2.3 3.1V21H9z"/></svg>
+            Connect on LinkedIn
+          </a>
         </div>
       </div>
+      <figure class="plate">
+        <img src="images/andres-portrait.jpg" width="720" height="900" alt="Portrait of Andres Arias">
+      </figure>
     </div>
-  </section>
 
-  <section id="speaking">
-    <div class="wrap reveal">
-      <p class="section-label">Speaking</p>
-      <h2>Enterprise AI execution and the future of work.</h2>
-      <div class="prose">
-        <p>I speak and teach about what it actually takes for organizations to execute with AI, and about what happens to the people inside that change.</p>
-      </div>
-      <div class="rows">
-        <div class="row">
-          <span class="when">2026</span>
-          <span class="what"><em>AI Execution Certificate</em> — FIU Executive Education, co-instructor</span>
-        </div>
-        <div class="row">
-          <span class="when">2026</span>
-          <span class="what"><em>Visions of the Future</em> panel — FIU AI 305 Conference, moderator</span>
-        </div>
-        <div class="row">
-          <span class="when">Ongoing</span>
-          <span class="what">AI strategy programs for executive teams across the Americas</span>
-        </div>
-      </div>
-      <p style="margin-top: 2rem;"><a class="btn" href="mailto:andres@clarity.vc?subject=Speaking%20inquiry">Invite me to speak</a></p>
-    </div>
-  </section>
+    <hr class="rule">
 
-  <section id="writing">
-    <div class="wrap reveal">
-      <p class="section-label">Writing</p>
-      <h2>A thinking practice, in public.</h2>
-      <div class="cards">
-        <a class="card card-link" href="https://distinctions.andresarias.com">
-          <p class="role">Publication</p>
+    <section id="about" class="reveal">
+      <h2 class="section-label">About</h2>
+      <div class="section-body two-col">
+        <p class="prose">Senior customer solutions leader at Amazon Web Services. Faculty at Florida International University's College of Business. Board director. Ontological coach.</p>
+        <p class="prose">I spend my days with large enterprises moving through cloud and AI transformation, my classrooms with graduate students and executives, and my quietest hours with people at inflection points — the moment when the old chapter has clearly ended and the new one has not yet taken shape.</p>
+        <p class="prose">They are usually not struggling people. They are highly capable, deeply responsible, and stuck precisely because of that. What makes the combination uncommon is corporate depth, academic rigor and human warmth. Most people who work with others in transition have one or two.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="work" class="reveal">
+      <h2 class="section-label">Selected work</h2>
+      <div class="section-body">
+        <div class="roles">
+          <article class="role">
+            <div>
+              <h3>Amazon Web Services</h3>
+              <p class="title">Senior customer solutions leader</p>
+            </div>
+            <p class="prose">Cloud and AI adoption strategy for some of the largest enterprises in the Americas — the work of getting transformation to actually land inside organizations that have a lot to lose.</p>
+          </article>
+          <article class="role">
+            <div>
+              <h3>Florida International University</h3>
+              <p class="title">Faculty, College of Business</p>
+            </div>
+            <p class="prose">Business intelligence, analytics, statistics and AI strategy, taught across undergraduate, graduate and executive education. Co-instructor of the AI Execution Certificate.</p>
+          </article>
+          <article class="role">
+            <div>
+              <h3>Google</h3>
+              <p class="title">Senior product manager</p>
+            </div>
+            <p class="prose">Building AI digital products to unleash revenue and efficiencies through sales intelligence.</p>
+          </article>
+          <article class="role">
+            <div>
+              <h3>Independent advising</h3>
+              <p class="title">Founders &amp; executive teams</p>
+            </div>
+            <p class="prose">Product thinking and AI adoption, for teams deciding what to build and what it will cost the people who have to build it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="research" class="reveal">
+      <h2 class="section-label">Research</h2>
+      <div class="section-body">
+        <blockquote>Why does technology adoption burn people out, and what separates the people who thrive from the ones who quit?</blockquote>
+        <div class="two-col">
+          <p class="prose">Doctor of Business Administration, Florida International University. My research examines the overlooked human side of enterprise technology adoption: why it produces burnout and turnover, and what capabilities make some professionals resilient to it.</p>
+          <p class="prose">The work identifies product management acumen — thinking in outcomes, systems and user value rather than tasks — as a measurable protective factor. It is the foundation under the teaching, the advising and the writing.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="coaching" class="reveal">
+      <h2 class="section-label">Coaching</h2>
+      <div class="section-body" style="max-width: 760px;">
+        <p class="statement">I coach accomplished professionals standing at a crossroads.</p>
+        <p class="prose" style="max-width: 58ch; margin-bottom: 24px;">Ontological coaching. The work is not advice. It is helping people hear their own direction again, and build something from it.</p>
+        <a class="link-btn" href="https://coaching.andresarias.com">coaching.andresarias.com</a>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section id="writing" class="reveal">
+      <h2 class="section-label">Writing</h2>
+      <div class="section-body trio">
+        <div>
           <h3>Distinctions</h3>
-          <p>Essays about redesigning inherited systems: the organizations we work in and the selves we bring to them. New pieces when they are ready, not on a schedule.</p>
-          <span class="more">distinctions.andresarias.com →</span>
-        </a>
-        <a class="card card-link" href="https://www.linkedin.com/in/andresarias">
-          <p class="role">Shorter form</p>
+          <p class="prose">A publication and a thinking practice about redesigning inherited systems: the organizations we work in and the selves we bring to them. New pieces when they are ready, not on a schedule.</p>
+          <a href="https://distinctions.andresarias.com">distinctions.andresarias.com</a>
+        </div>
+        <div>
           <h3>LinkedIn</h3>
-          <p>Regular writing on AI, technology adoption, and the future of work.</p>
-          <span class="more">linkedin.com/in/andresarias →</span>
-        </a>
-        <div class="card muted">
-          <p class="role">In progress</p>
-          <h3>A book on the enterprise AI execution gap</h3>
-          <p>Why AI initiatives stall between strategy and delivery, and what the organizations that break through do differently.</p>
+          <p class="prose">Shorter-form writing on AI, technology adoption and the future of work.</p>
+          <a href="https://linkedin.com/in/andresarias">linkedin.com/in/andresarias</a>
+        </div>
+        <div>
+          <h3>Book in progress</h3>
+          <p class="prose">On the human side of the AI shift: what happens to people, not just to organizations, when the work changes underneath them.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="research">
-    <div class="wrap reveal">
-      <p class="section-label">Research</p>
-      <h2>The human cost of technology adoption.</h2>
-      <div class="prose">
-        <p>My doctoral research at Florida International University examines the overlooked human side of enterprise technology adoption: why it produces burnout and turnover, and what makes some professionals resilient to it.</p>
-        <p>The work identifies product management acumen, the ability to think in outcomes, systems, and user value rather than tasks, as a measurable protective factor. It is the research foundation behind my teaching, advising, and writing on AI and the future of work.</p>
+    <hr class="rule">
+
+    <section id="speaking" class="reveal">
+      <h2 class="section-label">Speaking &amp; teaching</h2>
+      <div class="section-body">
+        <p class="prose" style="max-width: 58ch; margin-bottom: 28px;">I speak and teach about what it actually takes for organizations to execute with AI, and about what happens to the people inside that change.</p>
+        <table>
+          <tbody>
+            <tr>
+              <td class="what">AI Execution Certificate — co-instructor</td>
+              <td class="when">FIU Exec Ed, 2026</td>
+            </tr>
+            <tr>
+              <td class="what">“Visions of the Future” panel — moderator</td>
+              <td class="when">FIU AI 305, 2026</td>
+            </tr>
+            <tr>
+              <td class="what">AI strategy programs for executive teams</td>
+              <td class="when">Americas, ongoing</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <p class="pull">Why does technology adoption burn people out, and what separates the people who thrive from the ones who quit?</p>
-      <div class="cards" style="margin-top: 2.4rem; max-width: 480px;">
-        <div class="card muted">
-          <p class="role">Dissertation</p>
-          <h3>FIU Digital Commons</h3>
-          <p>Full dissertation link coming soon.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section id="contact" class="reveal">
+      <h2 class="section-label">Contact</h2>
+      <div class="section-body">
+        <p class="connect">Let's connect.</p>
+        <div class="connect-links">
+          <a href="https://linkedin.com/in/andresarias">LinkedIn</a>
+          <a href="https://www.x.com/andresarias">X</a>
+          <a href="https://www.instagram.com/andresarias">Instagram</a>
+          <a href="https://distinctions.andresarias.com">Distinctions</a>
+          <a href="https://coaching.andresarias.com">Coaching</a>
+          <span class="place">Miami, Florida</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="coaching">
-    <div class="wrap reveal">
-      <p class="section-label">Coaching</p>
-      <h2>For capable people at inflection points.</h2>
-      <div class="prose">
-        <p>I trained as an ontological coach with Newfield. I coach accomplished professionals standing at a crossroads: a career transition, an identity shift, the sense of having outgrown a life that still looks fine from the outside.</p>
-        <p>The work is not advice. It is helping you hear your own direction again, and build something from it.</p>
-      </div>
-      <p style="margin-top: 2rem;"><a class="btn solid" href="https://coaching.andresarias.com">Learn more &amp; book a conversation</a></p>
-    </div>
-  </section>
-
-  <section id="press">
-    <div class="wrap reveal">
-      <p class="section-label">Press</p>
-      <h2>Interviews and mentions.</h2>
-      <div class="cards" style="max-width: 480px;">
-        <div class="card muted">
-          <p class="role">Interview</p>
-          <h3>Harvard Business Review</h3>
-          <p>Coming soon.</p>
-        </div>
-      </div>
-      <div class="prose" style="margin-top: 2rem;">
-        <p>For media and interview inquiries, write to <a href="mailto:andres@clarity.vc">andres@clarity.vc</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <p class="foot-name">Andres Arias</p>
-      <div class="foot-links">
-        <a href="https://www.linkedin.com/in/andresarias">LinkedIn</a>
-        <a href="https://distinctions.andresarias.com">Distinctions</a>
-        <a href="https://coaching.andresarias.com">Coaching</a>
-        <a href="mailto:andres@clarity.vc">Email</a>
-      </div>
-      <p class="colophon">© 2026 Andres Arias · Miami, Florida</p>
-    </div>
-  </footer>
+  </div>
 
   <script>
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12 });
+    }, { rootMargin: '0px 0px -10% 0px' });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 </body>
